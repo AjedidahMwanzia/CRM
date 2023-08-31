@@ -20,10 +20,14 @@ def home(request):
     else: 
         return render (request, 'home.html', {})
 
-def login_user(request):
+# def login_user(request):
     # return render (request, 'login.html')
-    pass
+  
 
 def logout_user(request):
-    # return render (request, 'logout.html')
-    pass
+   logout(request)
+   messages.success(request, 'You have been logged out')
+   return redirect('home') 
+
+def register_user(request):
+      return render (request, 'register.html', {})
